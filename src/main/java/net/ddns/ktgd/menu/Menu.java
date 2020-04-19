@@ -48,7 +48,7 @@ public abstract class Menu implements Screen {
         stage.resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 
-    protected Actor getClickedActor(Actor actor, Consumer<InputEvent> consumer) {
+    public static Actor getClickedActor(Actor actor, Consumer<InputEvent> consumer) {
         actor.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
