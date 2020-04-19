@@ -32,7 +32,7 @@ public final class MenuExample extends Menu {
     @Override
     public void show() {
         MAIN_MENU = new MenuStage(SECOND_MENU_BUTTON, BUTTON, QUIT_BUTTON);
-        SECOND_MENU = new MenuStage(LONG_BUTTON, BACK_BUTTON, QUIT_BUTTON);
+        SECOND_MENU = new MenuStage(LONG_BUTTON, BACK_BUTTON);
         changeMenu(MAIN_MENU);
     }
 
