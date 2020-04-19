@@ -25,19 +25,19 @@ public class MenuStage {
         }
     }
 
-    void show() {
+    public void show() {
         Gdx.input.setInputProcessor(stage);
     }
 
-    void act(float delta) {
+    public void act(float delta) {
         stage.act(delta);
     }
 
-    void draw() {
+    public void draw() {
         stage.draw();
     }
 
-    void resize(int newWidth, int newHeight) {
+    public void resize(int newWidth, int newHeight) {
         stage.getViewport().update(newWidth, newHeight);
     }
 
