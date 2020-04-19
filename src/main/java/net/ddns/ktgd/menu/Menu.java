@@ -28,7 +28,7 @@ public abstract class Menu implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        stage.getViewport().update(width, height);
+        stage.resize(width, height);
     }
 
     @Override
@@ -38,11 +38,14 @@ public abstract class Menu implements Screen {
     public void resume() {}
 
     @Override
-    public void dispose() {}
+    public void dispose() {
+        uiSkin.dispose();
+    }
 
     protected void changeMenu(MenuStage menu) {
         stage = menu;
         stage.show();
+        stage.resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 
     protected Actor getClickedActor(Actor actor, Consumer<InputEvent> consumer) {

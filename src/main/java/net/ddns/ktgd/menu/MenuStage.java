@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MenuStage {
     private final Stage stage;
@@ -38,8 +37,8 @@ public class MenuStage {
         stage.draw();
     }
 
-    Viewport getViewport() {
-        return stage.getViewport();
+    void resize(int newWidth, int newHeight) {
+        stage.getViewport().update(newWidth, newHeight);
     }
 
     public void dispose() {

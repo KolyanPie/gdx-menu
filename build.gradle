@@ -24,6 +24,9 @@ allprojects {
     }
 
     dependencies {
+        testCompile "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+        testCompile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
     }
 }
