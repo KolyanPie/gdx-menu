@@ -4,8 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 
-import java.util.function.IntFunction;
-
 public class MenuStage {
     private final Stage stage;
 
@@ -50,12 +48,16 @@ public class MenuStage {
         return stage.addListener(listener);
     }
 
-    public boolean addKeyDownListener(IntFunction<Boolean> listener) {
+    public boolean addKeyDownListener(KeyDownListener listener) {
         return stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
-                return listener.apply(keycode);
+                return listener.keyDown(keycode);
             }
         });
+    }
+
+    public interface KeyDownListener {
+        boolean keyDown(int keycode);
     }
 }
