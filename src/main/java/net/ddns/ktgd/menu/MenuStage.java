@@ -57,6 +57,10 @@ public class MenuStage {
         });
     }
 
+    public Stage getStage() {
+        return stage;
+    }
+
     public interface KeyDownListener {
         boolean keyDown(int keycode);
     }
